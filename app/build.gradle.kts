@@ -5,16 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.examen_final"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 34 // Ajustado a una versión estable estándar
 
     defaultConfig {
         applicationId = "com.example.examen_final"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -48,6 +44,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+
+    // ESTA ES LA LÍNEA QUE FALTABA PARA LA NAVEGACIÓN
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
